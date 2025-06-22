@@ -36,41 +36,41 @@ const Chapter2Vision: React.FC<Chapter2Props> = ({ onNext, onPrev }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center px-4 pt-16">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <span className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
             <Lightbulb className="w-4 h-4 mr-2" />
             Chapter 2: The Vision
           </span>
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             "What if marketing intelligence was <span className="text-blue-600">effortless</span>?"
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             I envisioned a platform that would transform how Apple's EMEA marketing team makes decisions. 
             Not just reports, but <span className="font-semibold">intelligence</span>.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {visionPoints.map((point) => (
             <Card 
               key={point.id}
-              className={`cursor-pointer transition-all duration-300 border-2 ${
+              className={`cursor-pointer transition-all duration-300 border-2 hover:shadow-lg ${
                 selectedVision === point.id 
                   ? 'border-blue-400 bg-blue-50 shadow-lg scale-105' 
-                  : 'border-gray-200 hover:border-blue-300 hover:shadow-md'
+                  : 'border-gray-200 hover:border-blue-300'
               }`}
               onClick={() => setSelectedVision(selectedVision === point.id ? null : point.id)}
             >
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-8 text-center">
                 <div className="text-blue-600 mb-4 flex justify-center">
                   {point.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{point.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{point.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{point.title}</h3>
+                <p className="text-gray-600 mb-4">{point.description}</p>
                 {selectedVision === point.id && (
-                  <div className="mt-4 p-4 bg-white rounded-lg border border-blue-200 text-left">
+                  <div className="mt-6 p-4 bg-white rounded-lg border border-blue-200 text-left">
                     <p className="text-sm text-gray-700">{point.details}</p>
                   </div>
                 )}
@@ -79,31 +79,31 @@ const Chapter2Vision: React.FC<Chapter2Props> = ({ onNext, onPrev }) => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white mb-8">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white mb-12 shadow-lg">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">The Platform Vision</h2>
-            <p className="text-xl mb-6 text-blue-100">
+            <h2 className="text-3xl font-bold mb-6">The Platform Vision</h2>
+            <p className="text-xl mb-8 text-blue-100">
               "A marketing intelligence platform that thinks like a strategist, acts like an analyst, and delivers like a consultant."
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="text-left">
-                <h3 className="text-lg font-semibold mb-3 text-blue-100">Before: The Problems</h3>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center"><span className="text-red-300 mr-2">✗</span> Data in silos</li>
-                  <li className="flex items-center"><span className="text-red-300 mr-2">✗</span> Manual reporting</li>
-                  <li className="flex items-center"><span className="text-red-300 mr-2">✗</span> Reactive decisions</li>
-                  <li className="flex items-center"><span className="text-red-300 mr-2">✗</span> Budget inefficiencies</li>
+              <div className="text-left bg-white/10 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-4 text-blue-100">Before: The Problems</h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-center"><span className="text-red-300 mr-3">✗</span> Data in silos</li>
+                  <li className="flex items-center"><span className="text-red-300 mr-3">✗</span> Manual reporting</li>
+                  <li className="flex items-center"><span className="text-red-300 mr-3">✗</span> Reactive decisions</li>
+                  <li className="flex items-center"><span className="text-red-300 mr-3">✗</span> Budget inefficiencies</li>
                 </ul>
               </div>
               
-              <div className="text-left">
-                <h3 className="text-lg font-semibold mb-3 text-blue-100">After: The Solution</h3>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center"><span className="text-green-300 mr-2">✓</span> Unified data view</li>
-                  <li className="flex items-center"><span className="text-green-300 mr-2">✓</span> Automated insights</li>
-                  <li className="flex items-center"><span className="text-green-300 mr-2">✓</span> Proactive recommendations</li>
-                  <li className="flex items-center"><span className="text-green-300 mr-2">✓</span> Optimized ROI</li>
+              <div className="text-left bg-white/10 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-4 text-blue-100">After: The Solution</h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-center"><span className="text-green-300 mr-3">✓</span> Unified data view</li>
+                  <li className="flex items-center"><span className="text-green-300 mr-3">✓</span> Automated insights</li>
+                  <li className="flex items-center"><span className="text-green-300 mr-3">✓</span> Proactive recommendations</li>
+                  <li className="flex items-center"><span className="text-green-300 mr-3">✓</span> Optimized ROI</li>
                 </ul>
               </div>
             </div>
@@ -111,7 +111,7 @@ const Chapter2Vision: React.FC<Chapter2Props> = ({ onNext, onPrev }) => {
         </div>
 
         <div className="text-center">
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-xl text-gray-600 mb-8">
             Now came the exciting part: <span className="font-bold">"How do we build this?"</span>
           </p>
           <div className="flex justify-center space-x-4">
@@ -119,14 +119,14 @@ const Chapter2Vision: React.FC<Chapter2Props> = ({ onNext, onPrev }) => {
               onClick={onPrev}
               variant="outline"
               size="lg" 
-              className="px-8 py-3 rounded-full"
+              className="px-8 py-4 rounded-full text-lg"
             >
               <ArrowLeft className="w-5 h-5 mr-2" /> The Challenge
             </Button>
             <Button 
               onClick={onNext}
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg"
             >
               The Build <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
