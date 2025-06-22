@@ -34,7 +34,7 @@ const Chapter5Impact: React.FC<Chapter5Props> = ({ onNext, onPrev }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 px-4 py-8 pt-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium mb-4">

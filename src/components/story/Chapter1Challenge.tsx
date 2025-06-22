@@ -9,7 +9,7 @@ interface Chapter1Props {
 
 const Chapter1Challenge: React.FC<Chapter1Props> = ({ onNext }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-orange-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-orange-50 flex items-center justify-center px-4 pt-16">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <span className="inline-flex items-center px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-4">

@@ -11,7 +11,7 @@ interface Chapter6Props {
 
 const Chapter6DeepDive: React.FC<Chapter6Props> = ({ onPrev, onFinish }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-slate-50 pt-16">
       <div className="text-center py-16 px-4">
         <span className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-4">
           <Microscope className="w-4 h-4 mr-2" />

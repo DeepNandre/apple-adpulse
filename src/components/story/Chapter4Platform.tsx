@@ -10,7 +10,7 @@ interface Chapter4Props {
 
 const Chapter4Platform: React.FC<Chapter4Props> = ({ onNext, onPrev }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 pt-16">
       <div className="text-center py-16 px-4">
         <span className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
           <Monitor className="w-4 h-4 mr-2" />

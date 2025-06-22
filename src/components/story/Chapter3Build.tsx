@@ -55,7 +55,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-teal-50 px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-teal-50 px-4 py-8 pt-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-4">
