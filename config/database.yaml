@@ -1,0 +1,121 @@
+# Database Configuration for Apple Ad Performance Dashboard
+# Version: 1.0
+
+# Connection Settings
+database:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  name: ${DB_NAME}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  schema: ad_dashboard
+  
+  # Connection Pool Settings
+  pool:
+    min_connections: 1
+    max_connections: 10
+    connection_timeout: 30
+    idle_timeout: 300
+
+# Schema Configuration
+schema:
+  name: ad_dashboard
+  
+  # Dimension Tables
+  dimensions:
+    - name: dim_date
+      description: "Date dimension with calendar attributes"
+      primary_key: date_key
+      indexes:
+        - columns: [year, month]
+        - columns: [quarter]
+        - columns: [is_weekend]
+        
+    - name: dim_campaign
+      description: "Campaign dimension with metadata"
+      primary_key: campaign_key
+      indexes:
+        - columns: [campaign_type, status]
+        - columns: [platform]
+        
+    - name: dim_geo
+      description: "Geographic dimension (EMEA focus)"
+      primary_key: geo_key
+      indexes:
+        - columns: [country]
+        - columns: [is_emea]
+        
+    - name: dim_device
+      description: "Device and technology dimension"
+      primary_key: device_key
+      indexes:
+        - columns: [device_type]
+        
+    - name: dim_user
+      description: "Pseudonymized user dimension"
+      primary_key: user_key
+      indexes:
+        - columns: [customer_segment]
+
+  # Fact Tables
+  facts:
+    - name: fact_ad_performance
+      description: "Core ad delivery and performance metrics"
+      primary_key: ad_performance_id
+      partitioning:
+        type: range
+        column: date_key
+        interval: monthly
+      indexes:
+        - columns: [date_key, campaign_key]
+        - columns: [geo_key]
+        - columns: [ab_test_id, ab_test_variant]
+        
+    - name: fact_web_analytics
+      description: "Web session and behavior metrics"
+      primary_key: web_analytics_id
+      partitioning:
+        type: range
+        column: date_key
+        interval: monthly
+      indexes:
+        - columns: [session_id]
+        - columns: [date_key, campaign_key]
+        
+    - name: fact_conversions
+      description: "Conversion events with attribution"
+      primary_key: conversion_id
+      indexes:
+        - columns: [date_key]
+        - columns: [conversion_type]
+
+# Data Quality Rules
+data_quality:
+  rules:
+    - table: fact_ad_performance
+      checks:
+        - column: impressions
+          constraint: "impressions >= 0"
+        - column: clicks
+          constraint: "clicks <= impressions"
+        - column: spend
+          constraint: "spend >= 0"
+          
+    - table: fact_web_analytics
+      checks:
+        - column: page_views
+          constraint: "page_views >= 1"
+        - column: session_duration_seconds
+          constraint: "session_duration_seconds >= 0"
+
+# Backup and Maintenance
+maintenance:
+  backup:
+    schedule: "0 2 * * *"  # Daily at 2 AM
+    retention_days: 30
+    
+  vacuum:
+    schedule: "0 3 * * 0"  # Weekly on Sunday at 3 AM
+    
+  analyze:
+    schedule: "0 4 * * *"  # Daily at 4 AM 

@@ -1,0 +1,154 @@
+# ETL Configuration for Apple Ad Performance Dashboard
+# Version: 1.0
+
+# Data Generation Settings
+data_generation:
+  # Date Range
+  date_range:
+    start_date: "2024-01-01"
+    end_date: "2024-12-31"
+    
+  # Volume Settings
+  volume:
+    scale: "medium"  # small, medium, large
+    campaigns: 50
+    users: 100000
+    daily_sessions_range: [100, 2000]
+    
+  # Geographic Settings (EMEA Focus)
+  geography:
+    regions:
+      - "United Kingdom"
+      - "Germany" 
+      - "France"
+      - "Italy"
+      - "Spain"
+      - "Netherlands"
+      - "Belgium"
+      - "Switzerland"
+      - "Austria"
+      - "Sweden"
+      - "Norway"
+      - "Denmark"
+      - "Finland"
+      - "Poland"
+      
+  # Campaign Settings
+  campaigns:
+    types: ["Search", "Social", "Display", "Video"]
+    platforms: ["Google Ads", "Facebook", "LinkedIn", "Twitter"]
+    objectives: ["Awareness", "Conversion", "Traffic", "Engagement"]
+    ab_test_percentage: 0.2
+    
+  # Random Seed for Reproducibility
+  seed: 42
+
+# ETL Processing Settings
+processing:
+  # Batch Settings
+  batch_size: 10000
+  parallel_workers: 4
+  
+  # Data Validation
+  validation:
+    enabled: true
+    null_threshold: 0.1  # Max 10% nulls allowed
+    duplicate_threshold: 0.05  # Max 5% duplicates allowed
+    
+  # Error Handling
+  error_handling:
+    max_retries: 3
+    retry_delay_seconds: 5
+    continue_on_error: false
+    quarantine_invalid_records: true
+    
+  # Performance Settings
+  performance:
+    use_bulk_loading: true
+    optimize_after_load: true
+    vacuum_after_load: true
+    
+# File Settings
+files:
+  # Input/Output Paths
+  paths:
+    raw_data: "data/raw/"
+    processed_data: "data/processed/"
+    sample_data: "data/sample/"
+    logs: "logs/"
+    
+  # File Formats
+  formats:
+    input: "csv"
+    output: "csv"
+    compression: "gzip"
+    
+  # CSV Settings
+  csv:
+    delimiter: ","
+    encoding: "utf-8"
+    quote_char: '"'
+    escape_char: "\\"
+    
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_rotation:
+    max_size_mb: 100
+    backup_count: 5
+    
+# Data Quality Metrics
+metrics:
+  # Performance Metrics
+  performance:
+    target_rows_per_second: 1000
+    max_processing_time_minutes: 60
+    
+  # Quality Metrics
+  quality:
+    min_data_completeness: 0.95
+    max_error_rate: 0.01
+    
+# Notification Settings
+notifications:
+  enabled: false
+  channels:
+    email:
+      enabled: false
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      recipients: []
+      
+    slack:
+      enabled: false
+      webhook_url: ""
+      channel: "#data-alerts"
+      
+# Dashboard Integration
+dashboard:
+  tableau:
+    refresh_schedule: "0 6 * * *"  # Daily at 6 AM
+    extract_optimization: true
+    
+  views:
+    # Pre-aggregated views for performance
+    create_summary_views: true
+    refresh_materialized_views: true
+    
+# Environment-Specific Overrides
+environments:
+  development:
+    data_generation:
+      volume:
+        scale: "small"
+        campaigns: 10
+        users: 1000
+        
+  production:
+    processing:
+      parallel_workers: 8
+      batch_size: 50000
+      
+    notifications:
+      enabled: true 

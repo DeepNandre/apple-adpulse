@@ -1,0 +1,51 @@
+campaign_key,campaign_name,campaign_type,platform,start_date,end_date,budget,status
+06701b4e-4711-42d6-9ad9-204a161336a3,Search Campaign 1 - Google Ads,Search,Google Ads,2024-08-21,,7837.36,Active
+49fb0956-70ca-4d84-9f56-28a2e86a4607,Search Campaign 2 - Twitter,Search,Twitter,2024-01-10,,11713.26,Active
+53c9a138-e35a-41a5-9458-59cd4f76b969,Search Campaign 3 - Facebook,Search,Facebook,2024-04-10,,29874.02,Active
+7e6e832f-9921-49f6-bf95-326e1be07208,Search Campaign 4 - Facebook,Search,Facebook,2024-03-22,,8618.50,Active
+0ef53c22-4855-4021-ad0f-fd3a0535c730,Display Campaign 5 - Google Ads,Display,Google Ads,2024-09-25,,18589.99,Active
+74aa82ce-26d5-47f4-91b1-2562c211e859,Display Campaign 6 - Google Ads,Display,Google Ads,2024-09-03,,48682.67,Active
+d9d6c796-462f-456e-a429-a48603382a42,Display Campaign 7 - LinkedIn,Display,LinkedIn,2024-11-21,,3245.39,Active
+96f6aa5a-7998-4bf4-86ab-39a0be07661a,Display Campaign 8 - Google Ads,Display,Google Ads,2024-02-01,,19626.19,Paused
+2082a907-4871-4b61-b1e3-b12cb39c96b0,Display Campaign 9 - Facebook,Display,Facebook,2024-06-03,,33838.58,Active
+0e44462f-6fc6-4b69-a3ad-c4d066bdb301,Search Campaign 10 - Facebook,Search,Facebook,2024-01-11,,19593.32,Active
+aa789ad3-482a-4cc5-bafd-2016a77bdc54,Social Campaign 11 - LinkedIn,Social,LinkedIn,2024-03-20,,2572.91,Active
+492cd9d8-6e77-4924-b645-1d70c25c1b10,Display Campaign 12 - Google Ads,Display,Google Ads,2024-07-03,,28791.82,Paused
+2ef018b8-8685-4a49-b516-fb0b1bd601de,Social Campaign 13 - Twitter,Social,Twitter,2024-01-10,,32499.74,Paused
+4d096451-3436-418c-999d-8746d9b0c70a,Social Campaign 14 - Facebook,Social,Facebook,2024-03-13,,21993.26,Active
+8e0b966b-f5fe-405c-842b-dfd7ebc59fc4,Display Campaign 15 - Facebook,Display,Facebook,2024-08-25,,5454.56,Active
+b734ed59-ed74-40fd-b2d3-82ea6d68cd07,Search Campaign 16 - Facebook,Search,Facebook,2024-07-17,,21685.84,Active
+54f299f7-2df7-478d-acef-c73dcc699d3e,Video Campaign 17 - Twitter,Video,Twitter,2024-03-21,,43178.21,Paused
+228a45ae-6f9f-4ce4-81a2-fc70b31c648c,Search Campaign 18 - LinkedIn,Search,LinkedIn,2024-08-03,,22303.50,Active
+fa4b7c74-0d92-4871-bd66-7e4e24b9bde5,Display Campaign 19 - Facebook,Display,Facebook,2024-10-22,,15623.79,Paused
+5a41bec6-fbdf-4e54-92b1-9e79ad94de18,Social Campaign 20 - Facebook,Social,Facebook,2024-01-03,,27429.57,Active
+f7fd3c79-ce08-4850-a303-a9914149f5e4,Search Campaign 21 - LinkedIn,Search,LinkedIn,2024-10-21,,46525.83,Active
+35293946-3700-48f4-981d-fc94c0a62c11,Display Campaign 22 - Facebook,Display,Facebook,2024-09-11,,28800.49,Active
+09e32b0a-881e-44bd-932d-c6e1accf0e63,Video Campaign 23 - Google Ads,Video,Google Ads,2024-05-04,,24288.84,Active
+5a5e07c9-b6ac-4dc6-b2e0-2e840aca9513,Display Campaign 24 - Twitter,Display,Twitter,2024-02-26,,38007.99,Paused
+086eef92-c650-42a0-96de-f18ed3ff8dd5,Display Campaign 25 - Twitter,Display,Twitter,2024-12-15,,26361.22,Active
+fdf2b38c-4219-4e02-95a2-8d12bbc79078,Social Campaign 26 - Google Ads,Social,Google Ads,2024-05-02,,28142.15,Active
+1cdeabb8-96cc-4ef3-bf38-a811a21bcd6d,Search Campaign 27 - Google Ads,Search,Google Ads,2024-02-03,,45365.58,Active
+bb3878d0-227a-4f16-82e2-12e581f75964,Search Campaign 28 - Facebook,Search,Facebook,2024-02-05,,11497.60,Active
+b3eb5fb0-f964-4d16-801d-a5eeb3b3bf3f,Video Campaign 29 - Facebook,Video,Facebook,2024-11-05,,10330.09,Paused
+ce49e614-fe5b-4c33-9da3-4f0c689a1fed,Video Campaign 30 - LinkedIn,Video,LinkedIn,2024-08-08,,43328.00,Active
+0ee3b206-ca17-4431-b031-296b708b2c95,Search Campaign 31 - Google Ads,Search,Google Ads,2024-10-21,,40229.03,Active
+5a9b52bb-ff3e-441a-a678-f53bec17daba,Social Campaign 32 - Facebook,Social,Facebook,2024-09-23,,9990.91,Active
+cbc4b607-149b-4eb6-b5d2-e130d043b144,Search Campaign 33 - Twitter,Search,Twitter,2024-07-14,,49964.84,Active
+dc7c2736-80b6-482a-b23e-ff3bda1a0a0b,Search Campaign 34 - Facebook,Search,Facebook,2024-12-21,,24586.56,Active
+5231973f-5c37-41be-8078-959cde9494c8,Search Campaign 35 - Facebook,Search,Facebook,2024-05-18,,20130.67,Active
+3df3f89a-7372-4386-9db7-4d4fb2b1f84f,Video Campaign 36 - LinkedIn,Video,LinkedIn,2024-07-20,,36794.76,Active
+eea31cbd-bffa-45cc-844b-71b9894a28ea,Video Campaign 37 - Facebook,Video,Facebook,2024-10-29,,48466.76,Active
+46a43000-bb9d-4aa6-a277-c455a4bcc16b,Search Campaign 38 - LinkedIn,Search,LinkedIn,2024-08-13,,24362.64,Active
+1953fe5f-79cc-45ce-a849-4efd48163240,Social Campaign 39 - Google Ads,Social,Google Ads,2024-11-10,,4357.55,Paused
+08848af0-07f0-46b6-99f0-4f04d6d436cc,Social Campaign 40 - Twitter,Social,Twitter,2024-07-29,,28914.10,Paused
+504a0ec9-9f26-41cc-a46c-b6967f270184,Search Campaign 41 - Google Ads,Search,Google Ads,2024-09-14,,28696.12,Active
+7aef7259-0d9d-490c-883b-df364d1cf7ba,Display Campaign 42 - Facebook,Display,Facebook,2024-01-17,,20393.51,Active
+10f2c527-476f-472f-8e1c-630d8c9ca118,Display Campaign 43 - Twitter,Display,Twitter,2024-03-24,,46850.98,Paused
+2ab6309a-124c-4c89-a595-6649e2319687,Search Campaign 44 - Google Ads,Search,Google Ads,2024-04-15,,7490.37,Active
+0c2d1d96-f62c-4634-b6a5-c8ea633992f9,Search Campaign 45 - Facebook,Search,Facebook,2024-01-30,,22471.04,Active
+a268947c-3b3d-477f-a270-9eb5bd08d577,Display Campaign 46 - Google Ads,Display,Google Ads,2024-03-25,,6075.74,Paused
+f4c2d839-a52c-4059-9d2f-f3128bd38be1,Display Campaign 47 - Google Ads,Display,Google Ads,2024-02-06,,8616.95,Active
+b904d400-a86e-47d5-b2ad-211dee0f9671,Social Campaign 48 - LinkedIn,Social,LinkedIn,2024-04-11,,42792.73,Active
+6484eb2a-11a1-43e1-80b9-d905bc08f980,Display Campaign 49 - Google Ads,Display,Google Ads,2024-08-20,,41638.06,Active
+cee7d834-c6d2-45b9-b74d-58b5d221fb82,Display Campaign 50 - Facebook,Display,Facebook,2024-05-13,,22649.94,Active
