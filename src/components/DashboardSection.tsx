@@ -256,114 +256,107 @@ class AppleAdsAnalytics:
           </div>
         </div>
 
-        {/* Main Dashboard Charts */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            {/* Performance Trends */}
-            <div>
-              <h3 className="text-2xl font-light text-gray-900 mb-6">Performance Trends</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={performanceData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="month" stroke="#666" />
-                  <YAxis stroke="#666" />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#fff', 
-                      border: '1px solid #e0e0e0',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                  <Area type="monotone" dataKey="conversions" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.1} />
-                  <Area type="monotone" dataKey="clicks" stackId="2" stroke="#10B981" fill="#10B981" fillOpacity={0.1} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Channel Distribution */}
-            <div>
-              <h3 className="text-2xl font-light text-gray-900 mb-6">Channel Distribution</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={channelData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={120}
-                    paddingAngle={5}
-                    dataKey="value"
-                  >
-                    {channelData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#fff', 
-                      border: '1px solid #e0e0e0',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="flex flex-wrap justify-center gap-4 mt-4">
-                {channelData.map((entry, index) => (
-                  <div key={entry.name} className="flex items-center">
-                    <div 
-                      className="w-3 h-3 rounded-full mr-2" 
-                      style={{ backgroundColor: COLORS[index % COLORS.length] }}
-                    ></div>
-                    <span className="text-sm text-gray-600">{entry.name} ({entry.value}%)</span>
+        {/* Advanced Tableau Dashboard Section - MOVED TO TOP PRIORITY */}
+        <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl shadow-lg p-8 mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-light text-gray-900 mb-4">Advanced Analytics Dashboard</h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light">
+              Interactive Tableau dashboard built with the comprehensive ETL pipeline, featuring advanced filtering, 
+              drill-down capabilities, and sophisticated data modeling techniques.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl p-6 shadow-inner">
+            <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg flex items-center justify-center mb-6 relative overflow-hidden">
+              {/* Tableau Dashboard Preview */}
+              <div className="absolute inset-0 bg-white m-4 rounded shadow-lg">
+                <div className="h-full w-full relative">
+                  {/* Mock Tableau Interface */}
+                  <div className="h-12 bg-gray-100 border-b flex items-center px-4 space-x-2">
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <div className="text-sm text-gray-600 ml-4">Tableau Public - Apple Interactive Ad Dashboard</div>
                   </div>
-                ))}
+                  
+                  {/* Dashboard Content Preview */}
+                  <div className="p-6 h-full bg-white">
+                    <div className="grid grid-cols-3 gap-4 mb-6">
+                      <div className="bg-blue-50 p-3 rounded text-center">
+                        <div className="text-2xl font-bold text-blue-900">2.4M</div>
+                        <div className="text-xs text-blue-700">Impressions</div>
+                      </div>
+                      <div className="bg-green-50 p-3 rounded text-center">
+                        <div className="text-2xl font-bold text-green-900">119K</div>
+                        <div className="text-xs text-green-700">Clicks</div>
+                      </div>
+                      <div className="bg-purple-50 p-3 rounded text-center">
+                        <div className="text-2xl font-bold text-purple-900">10.6K</div>
+                        <div className="text-xs text-purple-700">Conversions</div>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4 h-32">
+                      <div className="bg-gray-50 rounded flex items-center justify-center">
+                        <div className="text-gray-500 text-sm">Performance Trends</div>
+                      </div>
+                      <div className="bg-gray-50 rounded flex items-center justify-center">
+                        <div className="text-gray-500 text-sm">Geographic Heat Map</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Overlay with access button */}
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <a 
+                  href="https://public.tableau.com/views/Book1_17505426601910/Dashboard1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                >
+                  View Interactive Dashboard →
+                </a>
+              </div>
+            </div>
+            
+            {/* Dashboard Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl mb-4 mx-auto flex items-center justify-center">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Advanced Visualizations</h4>
+                <p className="text-sm text-gray-600">Complex charts, heat maps, and drill-down capabilities built with Tableau's enterprise features</p>
+              </div>
+              
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-green-100 rounded-xl mb-4 mx-auto flex items-center justify-center">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Data Integration</h4>
+                <p className="text-sm text-gray-600">Connected to PostgreSQL with 565K+ records from our comprehensive ETL pipeline</p>
+              </div>
+              
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl mb-4 mx-auto flex items-center justify-center">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Interactive Filtering</h4>
+                <p className="text-sm text-gray-600">Dynamic filters for campaigns, geographic regions, date ranges, and device types</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Geographic Performance */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <h3 className="text-2xl font-light text-gray-900 mb-6">EMEA Regional Performance</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={geoData} layout="horizontal">
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis type="number" stroke="#666" />
-                <YAxis dataKey="country" type="category" stroke="#666" width={100} />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#fff', 
-                    border: '1px solid #e0e0e0',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                  }} 
-                />
-                <Bar dataKey="value" fill="#3B82F6" radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-            
-            <div className="space-y-4">
-              {geoData.map((country, index) => (
-                <div key={country.country} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <div className="font-medium text-gray-900">{country.country}</div>
-                    <div className="text-sm text-gray-600">{country.value}% of total traffic</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-gray-900">€{country.revenue.toLocaleString()}</div>
-                    <div className="text-sm text-gray-600">Revenue</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Interactive A/B Testing Section */}
+        {/* Interactive A/B Testing Section - HIGH PRIORITY FOR APPLE */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
             <h3 className="text-2xl font-light text-gray-900 mb-4 md:mb-0">A/B Testing Analysis</h3>
@@ -462,73 +455,148 @@ class AppleAdsAnalytics:
           </div>
         </div>
 
-        {/* Customer Lifecycle Analysis */}
+        {/* EMEA Regional Performance - CRITICAL FOR APPLE EMEA ROLE */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <h3 className="text-2xl font-light text-gray-900 mb-6">Customer Lifecycle & Retention</h3>
-          
+          <h3 className="text-2xl font-light text-gray-900 mb-6">EMEA Regional Performance</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-medium text-gray-900 mb-4">User Acquisition vs Retention</h4>
-              <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={lifecycleData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="week" stroke="#666" />
-                  <YAxis stroke="#666" />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#fff', 
-                      border: '1px solid #e0e0e0',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                  <Area type="monotone" dataKey="newUsers" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.6} />
-                  <Area type="monotone" dataKey="returningUsers" stackId="1" stroke="#10B981" fill="#10B981" fillOpacity={0.6} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={geoData} layout="horizontal">
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis type="number" stroke="#666" />
+                <YAxis dataKey="country" type="category" stroke="#666" width={100} />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: '#fff', 
+                    border: '1px solid #e0e0e0',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                  }} 
+                />
+                <Bar dataKey="value" fill="#3B82F6" radius={[0, 4, 4, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
             
-            <div>
-              <h4 className="text-lg font-medium text-gray-900 mb-4">Retention Rate Trend</h4>
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={lifecycleData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="week" stroke="#666" />
-                  <YAxis stroke="#666" />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#fff', 
-                      border: '1px solid #e0e0e0',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                  <Line type="monotone" dataKey="retentionRate" stroke="#EF4444" strokeWidth={3} dot={{ fill: '#EF4444', strokeWidth: 2, r: 6 }} />
-                </LineChart>
-              </ResponsiveContainer>
+            <div className="space-y-4">
+              {geoData.map((country, index) => (
+                <div key={country.country} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div>
+                    <div className="font-medium text-gray-900">{country.country}</div>
+                    <div className="text-sm text-gray-600">{country.value}% of total traffic</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-semibold text-gray-900">€{country.revenue.toLocaleString()}</div>
+                    <div className="text-sm text-gray-600">Revenue</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
+
+        {/* Interactive SQL & Python Code Showcase - TECHNICAL SKILLS FOR APPLE */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-light text-gray-900 mb-4">Technical Implementation</h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light">
+              Advanced SQL queries and Python analytics showcasing expertise in ETL processes, 
+              statistical analysis, and data modeling for Apple Ads campaigns.
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-xl">
-              <div className="text-2xl font-bold text-blue-900">68%</div>
-              <div className="text-blue-700 font-medium">4-Week Retention</div>
-              <div className="text-sm text-blue-600 mt-1">Industry avg: 45%</div>
+          {/* Code Tab Navigation */}
+          <div className="flex flex-wrap gap-2 mb-6 p-1 bg-gray-100 rounded-lg">
+            <button
+              onClick={() => setActiveCodeTab('sql1')}
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                activeCodeTab === 'sql1' 
+                  ? 'bg-white text-blue-600 shadow-sm' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              📊 Customer LTV SQL
+            </button>
+            <button
+              onClick={() => setActiveCodeTab('sql2')}
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                activeCodeTab === 'sql2' 
+                  ? 'bg-white text-blue-600 shadow-sm' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              🧪 A/B Testing SQL
+            </button>
+            <button
+              onClick={() => setActiveCodeTab('python')}
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                activeCodeTab === 'python' 
+                  ? 'bg-white text-blue-600 shadow-sm' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              🐍 Python Analytics
+            </button>
+          </div>
+          
+          {/* Code Display */}
+          <div className="bg-gray-900 rounded-xl p-6 overflow-hidden">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <span className="text-gray-400 text-sm font-mono">
+                  {activeCodeTab === 'python' ? 'analytics.py' : 'query.sql'}
+                </span>
+              </div>
+              <button className="text-gray-400 hover:text-white transition-colors text-sm">
+                Copy Code
+              </button>
             </div>
-            <div className="bg-gradient-to-r from-green-50 to-green-100 p-4 rounded-xl">
-              <div className="text-2xl font-bold text-green-900">4.8</div>
-              <div className="text-green-700 font-medium">Avg Session/User</div>
-              <div className="text-sm text-green-600 mt-1">↗ +0.6 vs last month</div>
+            
+            <pre className="text-sm text-gray-300 overflow-x-auto">
+              <code>
+                {activeCodeTab === 'sql1' && sqlQueries.customerLTV}
+                {activeCodeTab === 'sql2' && sqlQueries.abTesting}
+                {activeCodeTab === 'python' && pythonCode}
+              </code>
+            </pre>
+          </div>
+          
+          {/* Code Explanation Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-blue-50 p-6 rounded-xl">
+              <h4 className="font-semibold text-blue-900 mb-3 flex items-center">
+                <span className="text-lg mr-2">⚡</span>
+                Performance Optimized
+              </h4>
+              <p className="text-blue-800 text-sm">
+                Queries optimized for large datasets with proper indexing, CTEs, and window functions 
+                for sub-second response times on 565K+ records.
+              </p>
             </div>
-            <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-4 rounded-xl">
-              <div className="text-2xl font-bold text-purple-900">3.2</div>
-              <div className="text-purple-700 font-medium">Pages/Session</div>
-              <div className="text-sm text-purple-600 mt-1">↗ +0.4 vs last month</div>
+            
+            <div className="bg-green-50 p-6 rounded-xl">
+              <h4 className="font-semibold text-green-900 mb-3 flex items-center">
+                <span className="text-lg mr-2">📈</span>
+                Statistical Rigor
+              </h4>
+              <p className="text-green-800 text-sm">
+                Advanced statistical methods including z-tests, power analysis, and confidence intervals 
+                for reliable A/B testing and business decision making.
+              </p>
             </div>
-            <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-4 rounded-xl">
-              <div className="text-2xl font-bold text-orange-900">2:34</div>
-              <div className="text-orange-700 font-medium">Avg Session Time</div>
-              <div className="text-sm text-orange-600 mt-1">↗ +0:18 vs last month</div>
+            
+            <div className="bg-purple-50 p-6 rounded-xl">
+              <h4 className="font-semibold text-purple-900 mb-3 flex items-center">
+                <span className="text-lg mr-2">🔄</span>
+                Production Ready
+              </h4>
+              <p className="text-purple-800 text-sm">
+                Error handling, data quality checks, and automated ETL processes designed for 
+                enterprise-scale Apple Ads campaign management.
+              </p>
             </div>
           </div>
         </div>
@@ -646,210 +714,142 @@ class AppleAdsAnalytics:
           </div>
         </div>
 
-        {/* Tableau Dashboard Section */}
-        <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl shadow-lg p-8 mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-light text-gray-900 mb-4">Advanced Analytics Dashboard</h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light">
-              Interactive Tableau dashboard built with the comprehensive ETL pipeline, featuring advanced filtering, 
-              drill-down capabilities, and sophisticated data modeling techniques.
-            </p>
-          </div>
+        {/* Customer Lifecycle Analysis */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
+          <h3 className="text-2xl font-light text-gray-900 mb-6">Customer Lifecycle & Retention</h3>
           
-          <div className="bg-white rounded-xl p-6 shadow-inner">
-            <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg flex items-center justify-center mb-6 relative overflow-hidden">
-              {/* Tableau Dashboard Preview */}
-              <div className="absolute inset-0 bg-white m-4 rounded shadow-lg">
-                <div className="h-full w-full relative">
-                  {/* Mock Tableau Interface */}
-                  <div className="h-12 bg-gray-100 border-b flex items-center px-4 space-x-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <div className="text-sm text-gray-600 ml-4">Tableau Public - Apple Interactive Ad Dashboard</div>
-                  </div>
-                  
-                  {/* Dashboard Content Preview */}
-                  <div className="p-6 h-full bg-white">
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="bg-blue-50 p-3 rounded text-center">
-                        <div className="text-2xl font-bold text-blue-900">2.4M</div>
-                        <div className="text-xs text-blue-700">Impressions</div>
-                      </div>
-                      <div className="bg-green-50 p-3 rounded text-center">
-                        <div className="text-2xl font-bold text-green-900">119K</div>
-                        <div className="text-xs text-green-700">Clicks</div>
-                      </div>
-                      <div className="bg-purple-50 p-3 rounded text-center">
-                        <div className="text-2xl font-bold text-purple-900">10.6K</div>
-                        <div className="text-xs text-purple-700">Conversions</div>
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4 h-32">
-                      <div className="bg-gray-50 rounded flex items-center justify-center">
-                        <div className="text-gray-500 text-sm">Performance Trends</div>
-                      </div>
-                      <div className="bg-gray-50 rounded flex items-center justify-center">
-                        <div className="text-gray-500 text-sm">Geographic Heat Map</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Overlay with access button */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <a 
-                  href="https://public.tableau.com/views/Book1_17505426601910/Dashboard1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-gray-900 px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg"
-                >
-                  View Interactive Dashboard →
-                </a>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-medium text-gray-900 mb-4">User Acquisition vs Retention</h4>
+              <ResponsiveContainer width="100%" height={300}>
+                <AreaChart data={lifecycleData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="week" stroke="#666" />
+                  <YAxis stroke="#666" />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#fff', 
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                  <Area type="monotone" dataKey="newUsers" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.6} />
+                  <Area type="monotone" dataKey="returningUsers" stackId="1" stroke="#10B981" fill="#10B981" fillOpacity={0.6} />
+                </AreaChart>
+              </ResponsiveContainer>
             </div>
             
-            {/* Dashboard Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl mb-4 mx-auto flex items-center justify-center">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Advanced Visualizations</h4>
-                <p className="text-sm text-gray-600">Complex charts, heat maps, and drill-down capabilities built with Tableau's enterprise features</p>
-              </div>
-              
-              <div className="text-center p-4">
-                <div className="w-12 h-12 bg-green-100 rounded-xl mb-4 mx-auto flex items-center justify-center">
-                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Data Integration</h4>
-                <p className="text-sm text-gray-600">Connected to PostgreSQL with 565K+ records from our comprehensive ETL pipeline</p>
-              </div>
-              
-              <div className="text-center p-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl mb-4 mx-auto flex items-center justify-center">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Interactive Filtering</h4>
-                <p className="text-sm text-gray-600">Dynamic filters for campaigns, geographic regions, date ranges, and device types</p>
-              </div>
+            <div>
+              <h4 className="text-lg font-medium text-gray-900 mb-4">Retention Rate Trend</h4>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={lifecycleData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="week" stroke="#666" />
+                  <YAxis stroke="#666" />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#fff', 
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                  <Line type="monotone" dataKey="retentionRate" stroke="#EF4444" strokeWidth={3} dot={{ fill: '#EF4444', strokeWidth: 2, r: 6 }} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-xl">
+              <div className="text-2xl font-bold text-blue-900">68%</div>
+              <div className="text-blue-700 font-medium">4-Week Retention</div>
+              <div className="text-sm text-blue-600 mt-1">Industry avg: 45%</div>
+            </div>
+            <div className="bg-gradient-to-r from-green-50 to-green-100 p-4 rounded-xl">
+              <div className="text-2xl font-bold text-green-900">4.8</div>
+              <div className="text-green-700 font-medium">Avg Session/User</div>
+              <div className="text-sm text-green-600 mt-1">↗ +0.6 vs last month</div>
+            </div>
+            <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-4 rounded-xl">
+              <div className="text-2xl font-bold text-purple-900">3.2</div>
+              <div className="text-purple-700 font-medium">Pages/Session</div>
+              <div className="text-sm text-purple-600 mt-1">↗ +0.4 vs last month</div>
+            </div>
+            <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-4 rounded-xl">
+              <div className="text-2xl font-bold text-orange-900">2:34</div>
+              <div className="text-orange-700 font-medium">Avg Session Time</div>
+              <div className="text-sm text-orange-600 mt-1">↗ +0:18 vs last month</div>
             </div>
           </div>
         </div>
 
-        {/* Interactive SQL & Python Code Showcase */}
+        {/* Main Dashboard Charts - Performance Trends & Channel Distribution */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-light text-gray-900 mb-4">Technical Implementation</h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light">
-              Advanced SQL queries and Python analytics showcasing expertise in ETL processes, 
-              statistical analysis, and data modeling for Apple Ads campaigns.
-            </p>
-          </div>
-          
-          {/* Code Tab Navigation */}
-          <div className="flex flex-wrap gap-2 mb-6 p-1 bg-gray-100 rounded-lg">
-            <button
-              onClick={() => setActiveCodeTab('sql1')}
-              className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
-                activeCodeTab === 'sql1' 
-                  ? 'bg-white text-blue-600 shadow-sm' 
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              📊 Customer LTV SQL
-            </button>
-            <button
-              onClick={() => setActiveCodeTab('sql2')}
-              className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
-                activeCodeTab === 'sql2' 
-                  ? 'bg-white text-blue-600 shadow-sm' 
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              🧪 A/B Testing SQL
-            </button>
-            <button
-              onClick={() => setActiveCodeTab('python')}
-              className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
-                activeCodeTab === 'python' 
-                  ? 'bg-white text-blue-600 shadow-sm' 
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              🐍 Python Analytics
-            </button>
-          </div>
-          
-          {/* Code Display */}
-          <div className="bg-gray-900 rounded-xl p-6 overflow-hidden">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <span className="text-gray-400 text-sm font-mono">
-                  {activeCodeTab === 'python' ? 'analytics.py' : 'query.sql'}
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            {/* Performance Trends */}
+            <div>
+              <h3 className="text-2xl font-light text-gray-900 mb-6">Performance Trends</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <AreaChart data={performanceData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="month" stroke="#666" />
+                  <YAxis stroke="#666" />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#fff', 
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                  <Area type="monotone" dataKey="conversions" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.1} />
+                  <Area type="monotone" dataKey="clicks" stackId="2" stroke="#10B981" fill="#10B981" fillOpacity={0.1} />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Channel Distribution */}
+            <div>
+              <h3 className="text-2xl font-light text-gray-900 mb-6">Channel Distribution</h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={channelData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={120}
+                    paddingAngle={5}
+                    dataKey="value"
+                  >
+                    {channelData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: '#fff', 
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+              <div className="flex flex-wrap justify-center gap-4 mt-4">
+                {channelData.map((entry, index) => (
+                  <div key={entry.name} className="flex items-center">
+                    <div 
+                      className="w-3 h-3 rounded-full mr-2" 
+                      style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                    ></div>
+                    <span className="text-sm text-gray-600">{entry.name} ({entry.value}%)</span>
+                  </div>
+                ))}
               </div>
-              <button className="text-gray-400 hover:text-white transition-colors text-sm">
-                Copy Code
-              </button>
-            </div>
-            
-            <pre className="text-sm text-gray-300 overflow-x-auto">
-              <code>
-                {activeCodeTab === 'sql1' && sqlQueries.customerLTV}
-                {activeCodeTab === 'sql2' && sqlQueries.abTesting}
-                {activeCodeTab === 'python' && pythonCode}
-              </code>
-            </pre>
-          </div>
-          
-          {/* Code Explanation Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-blue-50 p-6 rounded-xl">
-              <h4 className="font-semibold text-blue-900 mb-3 flex items-center">
-                <span className="text-lg mr-2">⚡</span>
-                Performance Optimized
-              </h4>
-              <p className="text-blue-800 text-sm">
-                Queries optimized for large datasets with proper indexing, CTEs, and window functions 
-                for sub-second response times on 565K+ records.
-              </p>
-            </div>
-            
-            <div className="bg-green-50 p-6 rounded-xl">
-              <h4 className="font-semibold text-green-900 mb-3 flex items-center">
-                <span className="text-lg mr-2">📈</span>
-                Statistical Rigor
-              </h4>
-              <p className="text-green-800 text-sm">
-                Advanced statistical methods including z-tests, power analysis, and confidence intervals 
-                for reliable A/B testing and business decision making.
-              </p>
-            </div>
-            
-            <div className="bg-purple-50 p-6 rounded-xl">
-              <h4 className="font-semibold text-purple-900 mb-3 flex items-center">
-                <span className="text-lg mr-2">🔄</span>
-                Production Ready
-              </h4>
-              <p className="text-purple-800 text-sm">
-                Error handling, data quality checks, and automated ETL processes designed for 
-                enterprise-scale Apple Ads campaign management.
-              </p>
             </div>
           </div>
         </div>
