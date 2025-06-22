@@ -20,7 +20,7 @@ const Chapter4Platform: React.FC<Chapter4Props> = ({ onNext, onPrev }) => {
           "The moment of <span className="text-purple-600">truth</span>"
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          After weeks of building, here it is: <span className="font-semibold">AdPulse Marketing Intelligence Platform</span>. 
+          After rigorous development and testing, here it is: <span className="font-semibold">AdPulse Marketing Intelligence Platform</span>. 
           A unified command center for EMEA marketing operations.
         </p>
         

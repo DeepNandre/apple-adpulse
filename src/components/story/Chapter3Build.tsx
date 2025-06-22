@@ -19,8 +19,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
       challenge: "How do we store and structure 565K+ marketing records efficiently?",
       solution: "Built a star schema with PostgreSQL - fact tables for performance data, dimension tables for campaigns, geography, and time.",
       outcome: "Optimized for both storage and query performance with proper indexing.",
-      techStack: ["PostgreSQL", "Star Schema", "Indexes"],
-      duration: "Week 1-2"
+      techStack: ["PostgreSQL", "Star Schema", "Indexes"]
     },
     {
       id: 2,
@@ -29,8 +28,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
       challenge: "How do we simulate realistic EMEA marketing data for testing?",
       solution: "Created Python ETL scripts with Faker library to generate authentic-looking campaign data across 28 EMEA markets.",
       outcome: "Generated 565K records with realistic performance patterns and seasonal trends.",
-      techStack: ["Python", "Pandas", "Faker", "SQLAlchemy"],
-      duration: "Week 2-3"
+      techStack: ["Python", "Pandas", "Faker", "SQLAlchemy"]
     },
     {
       id: 3,
@@ -39,8 +37,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
       challenge: "How do we turn raw data into actionable insights?",
       solution: "Built analytics views and KPI calculations directly in SQL, with pre-aggregated dashboard tables for performance.",
       outcome: "Sub-second query times for complex EMEA market analysis and campaign performance metrics.",
-      techStack: ["SQL Views", "Aggregations", "Business Logic"],
-      duration: "Week 3-4"
+      techStack: ["SQL Views", "Aggregations", "Business Logic"]
     },
     {
       id: 4,
@@ -49,8 +46,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
       challenge: "How do we make complex data intuitive for marketing teams?",
       solution: "Designed React dashboard with Apple-style aesthetics, interactive charts, and progressive disclosure of information.",
       outcome: "Beautiful, responsive interface that marketers actually want to use daily.",
-      techStack: ["React", "TypeScript", "Recharts", "Tailwind"],
-      duration: "Week 4-5"
+      techStack: ["React", "TypeScript", "Recharts", "Tailwind"]
     }
   ];
 
@@ -71,7 +67,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
           </p>
         </div>
 
-        {/* Progress Timeline */}
+        {/* Progress Steps */}
         <div className="flex justify-center mb-8">
           <div className="flex items-center space-x-4">
             {buildSteps.map((step, index) => (
@@ -111,9 +107,6 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
                         <h2 className="text-2xl font-bold text-gray-900">{step.title}</h2>
-                        <span className="text-sm font-medium text-green-600 bg-green-100 px-3 py-1 rounded-full">
-                          {step.duration}
-                        </span>
                       </div>
                       
                       <div className="grid md:grid-cols-3 gap-6 mb-6">
@@ -149,7 +142,7 @@ const Chapter3Build: React.FC<Chapter3Props> = ({ onNext, onPrev }) => {
         {/* Build Summary */}
         <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">5 Weeks, Infinite Possibilities</h2>
+            <h2 className="text-3xl font-bold mb-4">Technical Excellence Achieved</h2>
             <div className="grid md:grid-cols-4 gap-6 mt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-2">565K+</div>

@@ -45,7 +45,7 @@ const Chapter5Impact: React.FC<Chapter5Props> = ({ onNext, onPrev }) => {
             "The numbers don't <span className="text-orange-600">lie</span>"
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Within weeks of deployment, the platform transformed how marketing decisions were made. 
+            Once deployed, the platform transformed how marketing decisions were made. 
             From reactive reporting to <span className="font-semibold">proactive intelligence</span>.
           </p>
         </div>
